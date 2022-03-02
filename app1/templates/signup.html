@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      
+      {% for message in messages %}
+      <h5>
+        <div class="alert alert-danger">
+          {{ message}}
+          </div>
+      </h5>
+      {%endfor%}
+    
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" style="margin: .5% auto;" >
+      <h1>Sign Up</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8" style="margin: 3% auto;" >
+      <form action="{% url 'usercreate'%}" method="POST" class="form">
+        {% csrf_token %}
+        <!-- <label>First Name</label> -->
+        <input type="text" name="first_name"  placeholder="First Name" class="form-control">
+        <!-- <label>Last Name</label> -->
+        <input type="text" name="last_name" style="margin-top: 1%;" placeholder="Last Name" class="form-control">
+        <!-- <label>Username</label> -->
+        <input type="text" name="username" placeholder="Username" style="margin-top: 1%;" class="form-control">
+        <!-- <label>Password</label> -->
+        <input type="password" name="password" placeholder="Password" style="margin-top: 1%;" class="form-control">
+        <!-- <label> Confirm Password</label> -->
+        <input type="password" name="cpassword" placeholder="Confirm Password" style="margin-top: 1%;" class="form-control">
+        <!-- <label>Email</label> -->
+        <input type="email" name="email" placeholder="Email" style="margin-top: 1%;" class="form-control">
+        <input type="submit" class="btn btn-dark" value="Sign Up" style="margin: 1% auto;" >
+
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

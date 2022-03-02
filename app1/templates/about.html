@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row" style="background-color: white; margin-top: 1%;">
+        <div class="col-sm-12">
+            <h1>About Page</h1>
+            <!-- <img src="https://images.app.goo.gl/psmgQZsFsk49KKez5" alt="" > -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            {% for msg in messages%}
+            
+            <h1>{{msg}}</h1>
+            {%endfor%}
+        </div>
+    </div>
+
+    <!-- <div class="row">
+        <div class="col-sm-12">
+            <a href="{% url 'adminlogout'%}"><input type="submit" class=" btn btn-light" value="Log Out"></a>
+        </div>
+    </div> -->
+</div>
+{% endblock %}
